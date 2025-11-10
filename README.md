@@ -1,4 +1,4 @@
-# API de Máquinas (Compass + Atlas) com Swagger — Código Comentado
+# API de Máquinas (Compass + Atlas) com Swagger
 
 ## Como documentar para aparecer no Swagger UI
 Documente **as rotas** com comentários `#swagger` (tags, summary, description, parameters, requestBody, responses). Depois gere:
