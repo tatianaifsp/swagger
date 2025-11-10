@@ -1,0 +1,338 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API de Máquinas (Compass/Atlas)",
+    "description": "Documentação gerada automaticamente com swagger-autogen.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local dev"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Máquinas",
+      "description": "CRUD de máquinas"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "Máquinas"
+        ],
+        "summary": "Buscar máquina por ID",
+        "description": "Retorna os dados completos de uma máquina a partir do seu ID.",
+        "responses": {
+          "200": {
+            "description": "Lista de máquinas retornada com sucesso"
+          },
+          "404": {
+            "description": "Máquina não encontrada"
+          },
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "responses": {
+          "201": {
+            "description": "Máquina criada com sucesso"
+          },
+          "400": {
+            "description": "Dados inválidos enviados"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MachineCreate"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/maquinas/": {
+      "get": {
+        "tags": [
+          "Máquinas"
+        ],
+        "summary": "Buscar máquina por ID",
+        "description": "Retorna os dados completos de uma máquina a partir do seu ID.",
+        "responses": {
+          "200": {
+            "description": "Lista de máquinas retornada com sucesso"
+          },
+          "404": {
+            "description": "Máquina não encontrada"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "responses": {
+          "201": {
+            "description": "Máquina criada com sucesso"
+          },
+          "400": {
+            "description": "Dados inválidos enviados"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MachineCreate"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/maquinas/{id}": {
+      "get": {
+        "tags": [
+          "Máquinas"
+        ],
+        "summary": "Buscar máquina por ID",
+        "description": "Retorna os dados completos de uma máquina a partir do seu ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Máquina encontrada"
+          },
+          "404": {
+            "description": "Máquina não encontrada"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID da máquina a ser atualizada"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Máquina atualizada com sucesso"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Máquina não encontrada"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MachineUpdate"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID da máquina a ser removida"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Máquina removida com sucesso (sem conteúdo)"
+          },
+          "404": {
+            "description": "Máquina não encontrada"
+          }
+        }
+      }
+    },
+    "/{id}": {
+      "get": {
+        "tags": [
+          "Máquinas"
+        ],
+        "summary": "Buscar máquina por ID",
+        "description": "Retorna os dados completos de uma máquina a partir do seu ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Máquina encontrada"
+          },
+          "404": {
+            "description": "Máquina não encontrada"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID da máquina a ser atualizada"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Máquina atualizada com sucesso"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Máquina não encontrada"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MachineUpdate"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID da máquina a ser removida"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Máquina removida com sucesso (sem conteúdo)"
+          },
+          "404": {
+            "description": "Máquina não encontrada"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MachineCreate": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "example": "object"
+          },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "nome": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "example": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": {
+            "type": "array",
+            "example": [
+              "nome"
+            ],
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "MachineUpdate": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "example": "object"
+          },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "nome": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "example": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

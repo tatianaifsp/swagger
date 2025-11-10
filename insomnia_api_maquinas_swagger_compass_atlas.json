@@ -1,0 +1,84 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-11-10T18:33:24.147264Z",
+  "__export_source": "chatgpt",
+  "resources": [
+    {
+      "_id": "wrk_1",
+      "_type": "workspace",
+      "name": "API Máquinas Swagger (Compass/Atlas)",
+      "description": ""
+    },
+    {
+      "_id": "fld_1",
+      "_type": "request_group",
+      "parentId": "wrk_1",
+      "name": "Máquinas"
+    },
+    {
+      "_id": "req1",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Health",
+      "method": "GET",
+      "url": "http://localhost:3000/health"
+    },
+    {
+      "_id": "req2",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Docs",
+      "method": "GET",
+      "url": "http://localhost:3000/api-docs"
+    },
+    {
+      "_id": "req3",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/api/maquinas"
+    },
+    {
+      "_id": "req4",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Criar",
+      "method": "POST",
+      "url": "http://localhost:3000/api/maquinas",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"nome\": \"Torno CNC\"}"
+      }
+    },
+    {
+      "_id": "req5",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Buscar por ID",
+      "method": "GET",
+      "url": "http://localhost:3000/api/maquinas/{{ _.id }}"
+    },
+    {
+      "_id": "req6",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Atualizar por ID",
+      "method": "PUT",
+      "url": "http://localhost:3000/api/maquinas/{{ _.id }}",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"status\": \"manutencao\"}"
+      }
+    },
+    {
+      "_id": "req7",
+      "_type": "request",
+      "parentId": "fld_1",
+      "name": "Excluir por ID",
+      "method": "DELETE",
+      "url": "http://localhost:3000/api/maquinas/{{ _.id }}"
+    }
+  ]
+}
