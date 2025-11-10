@@ -1,4 +1,4 @@
-# API de Máquinas (Compass + Atlas) com Swagger — Código Comentado
+# API de Máquinas (Compass + Atlas) com Swagger
 
 ## Como documentar para aparecer no Swagger UI
 Documente **as rotas** com comentários `#swagger` (tags, summary, description, parameters, requestBody, responses). Depois gere:
@@ -34,7 +34,8 @@ MONGODB_URI_ATLAS=mongodb+srv://usuario:SENHA@cluster0.xxxxx.mongodb.net/maquina
 - `/api-docs` → Swagger UI
 
 ## Diferença entre Middleware e Validador
-Conceito	O que faz	Exemplo no seu projeto
+Conceito	
+
 Middleware	Intercepta todas as requisições que passam por uma rota, e pode modificar, validar, bloquear ou registrar antes de chegar ao controlador final	loggerCustom, errorHandler, notFound
 Validador (Joi)	Só valida os dados do corpo (req.body) ou parâmetros, quando você o chama manualmente dentro da rota	machineCreateSchema.validate(req.body)
 
